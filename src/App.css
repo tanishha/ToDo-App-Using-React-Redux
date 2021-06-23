@@ -1,75 +1,228 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
 
-body {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  color: #8184a1;
-  line-height: 1.3;
-}
-h4 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-family: "Josefin Sans", sans-serif;
-}
-/* a:link, a:visited {
-  transition: color 0.15s ease 0s, border-color 0.15s ease 0s, background-color 0.15s ease 0s;
-} */
-.container {
-  display: flex;
-  width: 100%;
-  height: 90vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.quantity {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-.quantity__minus,
-.quantity__plus {
-  display: block;
-  width: 32px;
-  height: 33px;
+* {
   margin: 0;
-  background: #dee0ee;
-  text-decoration: none;
-  text-align: center;
-  line-height: 33px;
-  font-size: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
 }
-.quantity__minus:hover,
-.quantity__plus:hover {
-  background: #575b71;
+
+html {
+  font-size: 62.5%;
+}
+
+.main-div {
+  min-height: 100vh;
+  background: #060822;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.child-div {
+  text-align: center;
+  margin-top: 12rem;
+}
+
+.child-div figure img {
+  width: 10rem;
+  height: 8rem;
+}
+
+.child-div figure figcaption {
   color: #fff;
+  font-size: 2.2rem;
+  padding-top: 2rem;
+  text-transform: capitalize;
 }
-.quantity__minus {
-  border-radius: 3px 0 0 3px;
+
+input {
+  /* display: block; */
+  min-width: 40rem;
+  height: 3.4rem;
+  padding: 2rem 1.2rem;
+  font-size: 1.8rem;
+  line-height: 1.42857143;
+  margin-top: 2rem;
+  color: rgb(58, 57, 57);
+  background-color: #fff;
+  background-image: none;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  -webkit-box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
+  box-shadow: inset 0 0.1rem 0.1rem rgb(0 0 0 / 8%);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.quantity__plus {
-  border-radius: 0 3px 3px 0;
+
+input,
+input:focus,
+input:active,
+input:active:focus {
+  border: none;
+  padding: 2.3rem 1.5rem;
+  outline: none;
 }
-.quantity__input {
-  width: 42px;
-  height: 29px;
-  margin: 0;
-  padding: 0;
+input {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+input:focus {
+  -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+/*  Please Subscribe to ThapaTechnical Youtube Channel
+/* Click Here: https://www.youtube.com/thapatechnical  */
+
+.todo-btn {
+  width: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fa {
+  margin-left: -2.5rem;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
+  background-color: #fff;
+  background-image: none;
+  color: #666;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+  font-size: 2rem;
+}
+.fa:hover {
+  color: rgb(47, 214, 122);
+}
+
+.fa-plus:before {
+  content: "\f067";
+  font-size: 1.5rem;
+}
+
+.showItems {
+  margin-top: 3rem;
   text-align: center;
-  border-top: 2px solid #dee0ee;
-  border-bottom: 2px solid #dee0ee;
-  border-left: 1px solid #dee0ee;
-  border-right: 2px solid #dee0ee;
+}
+
+.eachItem {
   background: #fff;
-  color: #8184a1;
+  padding: 1.2rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.7rem;
+  margin-left: 1rem;
+  min-width: 40rem;
+  word-break: break-word;
+  background: rgb(85, 41, 220);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.quantity__minus:link,
-.quantity__plus:link {
-  color: #8184a1;
+
+.eachItem:hover {
+  background: rgb(249, 249, 252);
+  color: rgb(85, 41, 220);
 }
-.quantity__minus:visited,
-.quantity__plus:visited {
+
+.showItems .eachItem h3 {
+  padding-left: 1rem;
+  font-size: 1.6rem;
   color: #fff;
+}
+
+.fa-trash-alt,
+.fa-edit {
+  /* margin-left: -2.5rem; */
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
+  color: rgb(251, 251, 251);
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+  font-size: 2rem;
+}
+
+.addItems .fa-edit {
+  color: rgb(47, 214, 122);
+}
+
+.fa-edit {
+  margin-left: -3.5rem;
+}
+
+/*  Please Subscribe to ThapaTechnical Youtube Channel
+/* Click Here: https://www.youtube.com/thapatechnical  */
+
+.eachItem:hover .fa-trash-alt {
+  color: rgb(214, 47, 61);
+}
+
+.eachItem:hover .fa-edit {
+  color: rgb(100, 214, 47);
+}
+
+.eachItem:hover h3 {
+  color: rgb(85, 41, 220);
+}
+
+.btn {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+.effect04 {
+  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+  display: var(--uismLinkDisplay);
+  color: #000;
+  outline: solid 2px #000;
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+}
+
+.effect04::before,
+.effect04 span {
+  margin: 0 auto;
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  transition-duration: 0.4s;
+}
+
+.effect04:hover {
+  background-color: rgb(85, 41, 220);
+}
+
+.effect04:hover span {
+  -webkit-transform: translateY(-400%) scale(-0.1, 20);
+  transform: translateY(-400%) scale(-0.1, 20);
+}
+
+.effect04::before {
+  content: attr(data-sm-link-text);
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(500%) scale(-0.1, 20);
+  transform: translateY(500%) scale(-0.1, 20);
+}
+
+.effect04:hover::before {
+  letter-spacing: 0.05em;
+  -webkit-transform: translateY(0) scale(1, 1);
+  transform: translateY(0) scale(1, 1);
 }

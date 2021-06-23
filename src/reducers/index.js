@@ -1,9 +1,15 @@
-import {number} from './incdec';
+import {
+    number
+} from './incdec';
+import {
+    todo
+} from './todo';
 import {
     combineReducers
 } from 'redux';
 
 const rootReducer = combineReducers({
-    number
+    number,
+    todo
 })
 export default rootReducer;
