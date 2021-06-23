@@ -6,11 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import store from "./store";
 import { Provider } from "react-redux";
 
-store.subscribe(() => console.log(store.getState()));
+store.subscribe(() => console.log(store.getState())); //gives the current states
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider storeProp={store}>
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,

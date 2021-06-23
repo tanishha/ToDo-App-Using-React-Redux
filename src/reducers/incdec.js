@@ -1,4 +1,4 @@
-const initialState="0";
+const initialState=0;
 const number = (state=initialState, action) => {
     switch (action.type) {
         case "Inc":
