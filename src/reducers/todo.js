@@ -11,13 +11,23 @@ const todo = (state = initialData, action) => {
             return {
                 // ...state,
                 list: [
-                    ...state.list,{
-                    id: id,
-                    value: value
+                    ...state.list, {
+                        id: id,
+                        value: value
                     }
                 ]
             }
-            default:return state
+            case "deletetodo":
+                const newList = state.list.filter((elem) => elem.id !== action.payload.id)
+                return {
+                    list: newList
+                }
+                case "removetodo":
+                    return {
+                        list: []
+                    }
+                    default:
+                        return state
 
     }
 }

@@ -13,19 +13,27 @@ const addTodo = (value) => {
     return {
         type: 'addtodo',
         payload: {
-            id: new Date().getTime.toString(),
+            id: new Date().getSeconds(),
             value: value
         }
     }
 }
-const editTodo = () => {
+const editTodo = (id) => {
     return {
         type: "edittodo"
     }
 }
-const deleteTodo = () => {
+const deleteTodo = (id) => {
     return {
-        type: "deletetodo"
+        type: "deletetodo",
+        payload: {
+            id
+        }
+    }
+}
+const removeTodo = () => {
+    return {
+        type: "removetodo",
     }
 }
 export {
@@ -33,5 +41,6 @@ export {
     Decfunc,
     addTodo,
     editTodo,
-    deleteTodo
+    deleteTodo,
+    removeTodo
 }
