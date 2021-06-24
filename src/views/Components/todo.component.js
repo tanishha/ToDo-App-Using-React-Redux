@@ -4,6 +4,7 @@ import { addTodo, editTodo, deleteTodo, removeTodo } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 const TodoComponent = () => {
   const [inputData, setInputData] = React.useState(" ");
+
   const [edit, setEdit] = React.useState("");
   const [toggle, setToggle] = React.useState(false);
   const dispatch = useDispatch();
@@ -24,16 +25,19 @@ const TodoComponent = () => {
             value={inputData}
             onChange={(e) => setInputData(e.target.value)}
           />
-          {/* <i className="fa fa-plus add-btn" 
-                        onClick={()=>dispatch(addTodo(inputData),setInputData(""))} 
-                          >
 
-                          </i>  */}
           {toggle ? (
             <i
               className="far fa-edit add-btn"
               title="Update Item"
-              onClick={() => dispatch(editTodo(edit, inputData), setInputData(""),setEdit(""),setToggle(false))}
+              onClick={() =>
+                dispatch(
+                  editTodo(edit, inputData),
+                  setInputData(""),
+                  setEdit(""),
+                  setToggle(false)
+                )
+              }
             ></i>
           ) : (
             <i
@@ -53,15 +57,16 @@ const TodoComponent = () => {
                   <i
                     className="far fa-edit add-btn"
                     title="Edit item"
-                    onClick={()=>
-                      (setInputData(elem.value),
+                    onClick={() => (
+                      setInputData(elem.value),
                       setToggle(true),
-                      setEdit(elem.id))
-                    }
+                      setEdit(elem.id)
+                    )}
                   ></i>
 
                   <i
                     className="far fa-trash-alt add-btn "
+                    title="Delete item"
                     onClick={() => dispatch(deleteTodo(elem.id))}
                   ></i>
                 </div>

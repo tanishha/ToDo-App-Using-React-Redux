@@ -22,9 +22,6 @@ const todo = (state = initialData, action) => {
                 } = action.payload
                 const newData = state.list.find((elem) => elem.id === Id)
                 newData.value = Value
-                console.log("id is", Id)
-                console.log("value is", Value)
-                console.log("value beomes", newData)
                 return {
                     list: [
                         ...state.list,
