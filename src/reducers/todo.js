@@ -9,7 +9,6 @@ const todo = (state = initialData, action) => {
                 id, value
             } = action.payload;
             return {
-                // ...state,
                 list: [
                     ...state.list, {
                         id: id,
@@ -17,21 +16,35 @@ const todo = (state = initialData, action) => {
                     }
                 ]
             }
-            case "deletetodo":
-                const newList = state.list.filter((elem) => elem.id !== action.payload.id)
+            case "edittodo":
+                const {
+                    Id, Value
+                } = action.payload
+                const newData = state.list.find((elem) => elem.id === Id)
+                newData.value = Value
+                console.log("id is", Id)
+                console.log("value is", Value)
+                console.log("value beomes", newData)
                 return {
-                    list: newList
+                    list: [
+                        ...state.list,
+                    ]
                 }
-                case "removetodo":
+                case "deletetodo":
+                    const newList = state.list.filter((elem) => elem.id !== action.payload.id)
                     return {
-                        list: []
+                        list: newList
                     }
-                    default:
-                        return state
+                    case "removetodo":
+                        return {
+                            list: []
+                        }
 
+                        default:
+                            return state
     }
-}
 
+}
 export {
     todo
 }

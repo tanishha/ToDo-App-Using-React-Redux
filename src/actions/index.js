@@ -18,9 +18,15 @@ const addTodo = (value) => {
         }
     }
 }
-const editTodo = (id) => {
+const editTodo = (id,value) => {
+    console.log(value)
+
     return {
-        type: "edittodo"
+        type: "edittodo",
+        payload: {
+            Id: id,
+            Value: value
+        }
     }
 }
 const deleteTodo = (id) => {
